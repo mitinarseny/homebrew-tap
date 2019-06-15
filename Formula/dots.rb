@@ -2,9 +2,15 @@
 class Dots < Formula
   desc "Delivery tool for dotfiles"
   homepage "https://github.com/mitinarseny/dots"
-  url "https://github.com/mitinarseny/dots/releases/download/v0.1.3/dots_0.1.3_Darwin_x86_64.tar.gz"
-  version "0.1.3"
-  sha256 "8b43b749ebbc111cfac39d11c00314c0b0abc3f4c15db9ebdf92f1be6937f99b"
+  version "1.0.0"
+
+  if OS.mac?
+    url "https://github.com/mitinarseny/dots/releases/download/v1.0.0/dots_1.0.0_Darwin_x86_64.tar.gz"
+    sha256 "0b1ccd4988e4f7ba2a4d23bc96ed65bec5d45c657882bfed841baec7ab726885"
+  elsif OS.linux?
+    url "https://github.com/mitinarseny/dots/releases/download/v1.0.0/dots_1.0.0_Linux_x86_64.tar.gz"
+    sha256 "bbedb2c5f865b20680024e2efbbfe7267aa253c85048a6cf523bb17c331305da"
+  end
 
   def install
     bin.install "dots"
